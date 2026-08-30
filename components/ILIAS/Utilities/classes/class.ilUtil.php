@@ -429,6 +429,9 @@ class ilUtil
                 $allow_array[] = $allow;
             }
         }
+        
+        // Add <s> tag for formatting with TinyMCE
+        $allow_array[] = "s";
 
         // default behaviour: allow only secure tags 1:1
         if (($only_secure || $a_allow == "") && $a_strip_html) {
@@ -446,6 +449,8 @@ class ilUtil
                                 "strike",
                                 "bdo"
                 ];
+                // Add <s> tag for formatting with TinyMCE
+                $allow_array[] = "s";
             }
 
             // this currently removes parts of strings like "a <= b"
@@ -491,7 +496,8 @@ class ilUtil
                 "gap",
                 "a",
                 "img",
-                "bdo"
+                "bdo",
+                "s"
         ];
     }
 
@@ -1483,3 +1489,4 @@ class ilUtil
         return $result;
     }
 }
+

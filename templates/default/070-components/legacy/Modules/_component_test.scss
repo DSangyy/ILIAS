@@ -122,6 +122,12 @@ $il-test-working-time-font-weight: $il-font-weight-bold;
     scroll-margin-top: 30px;
 }
 
-.ilc_qanswer_Answer.ilc_answers.answers.ilAssClozeTest p input[type=text] {
-	width: 100%;
+.ilc_qanswer_Answer.ilc_answers.answers.ilAssClozeTest p input[type=text] { 
+	@supports (field-sizing: content) {
+		field-sizing: content;
+		min-width: 10%;
+	}
+	@supports not (field-sizing: content) {
+		width: 100%;
+	}
 }

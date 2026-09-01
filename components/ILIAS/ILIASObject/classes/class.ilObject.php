@@ -237,7 +237,7 @@ class ilObject
             );
 
             $this->log->write($message);
-            //throw new ilObjectTypeMismatchException($message);
+            throw new ilObjectTypeMismatchException($message);
         }
 
         $this->type = (string) $obj["type"];
